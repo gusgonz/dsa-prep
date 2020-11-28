@@ -36,7 +36,33 @@ def reverseLinkedList(head):
     return newHead
 
 
+# time O(n), space O(n)
+
+
+# 1 -> 2 -> 3 -> null
+# 3 -> 2 -> 1 -> null
+
+# prev = 3 -> 2 -> 1 -> null
+# curr = null
+# next = null
+
+
+def reverseLinkedList2(head):
+    prev = None
+    curr = head
+
+    while curr:
+        next = curr.next
+        curr.next = prev
+
+        prev = curr
+        curr = next
+
+    return prev
+
+# time O(n), space O(1)
+
+
 linkedList = Node(5, Node(3, Node(7)))
 print(reverseLinkedList(linkedList))
-
-# time O(n), space O(n)
+print(reverseLinkedList2(linkedList))
