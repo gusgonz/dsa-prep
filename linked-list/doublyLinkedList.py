@@ -11,3 +11,6 @@ class Node(object):
             stringOutput += str(curr.value)
             curr = curr.next
         return stringOutput
+
+
+print(Node(0, Node(1, Node(2))))
