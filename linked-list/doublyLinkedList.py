@@ -3,3 +3,11 @@ class Node(object):
         self.value = value
         self.next = next
         self.prev = prev
+
+    def __str__(self):
+        curr = self
+        stringOutput = ''
+        while curr:
+            stringOutput += str(curr.value)
+            curr = curr.next
+        return stringOutput
