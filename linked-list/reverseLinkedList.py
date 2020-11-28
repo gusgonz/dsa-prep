@@ -18,16 +18,25 @@ class Node(object):
 def reverseLinkedList(head):
     curr = head
     array = []
+
     while curr:
         array.append(curr.value)
         curr = curr.next
+
     newHead = None
+
     for item in reversed(array):
-        if not newHead:
+        if newHead is None:
             newHead = Node(item)
-            curr = newHead.next
+            newCurr = newHead
         else:
-            curr.value = item
-            curr = curr.next
+            newCurr.next = Node(item)
+            newCurr = newCurr.next
 
     return newHead
+
+
+linkedList = Node(5, Node(3, Node(7)))
+print(reverseLinkedList(linkedList))
+
+# time O(n), space O(n)
